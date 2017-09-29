@@ -1,0 +1,57 @@
+%% Phonelist
+%% Autor: Hilko Wiards
+\documentclass{article}
+\usepackage{xparse}
+
+
+%% Define the Domain here!
+\newcommand{\domain}{dummymail.com}
+
+
+%% Commands for easy useage.
+\newcommand{\teleEntry}[3]{#1 & #2 & #3 \\}
+\NewDocumentCommand{\teleMailEntry}{m m m g}{
+	\IfValueTF{#4}{#1 & #2 & #3 & #4\\}{#1 & #2 & \domain & #3\\}
+}
+
+\begin{document}
+	\centering	
+	\pagestyle{empty}	
+		
+	%%% Enter the Title here. (Organisation/Groupname etc.)
+	\huge Phonelist - Title
+	\vspace{10pt}
+	
+	%%% Enter the Subtitle here. (Telephonelist etc.)
+	\large -- Phonelist - Subtitle --
+	\normalsize
+	
+	
+	%%% Choose one of the following options.
+	%%% The second one aligns emails at the @ symbol.
+	
+	%% The usage of \teleEntry{Name}{Email-Adress}{Phone Nr.}
+	\vspace{30pt}
+	\begin{tabular}{lll}
+		
+		%% Enter contacts here.
+		\teleEntry{John Doe}{John.Doe@dummymail.com}{0125 898454783}
+		\teleEntry{Johanna Doe}{Johanna.Doe@dummymail.com}{0125 898454783}
+		\teleEntry{Kim Doe}{Kim@short.doe}{0125 898454783}
+
+	\end{tabular}
+
+
+	%% The usage of \teleMailEntry{Name}{Mail local-part}{Mail domain}{Phone Nr.}
+	%% The Domain is optional 
+	%% You can specify a default domain at the top of this document. 
+	\vspace{30pt}
+	\begin{tabular}{lr@{@}ll}
+		% Enter contacts here.
+		\teleMailEntry{John Doe}{John.Doe}{dummymail.com}{0125 898454783}
+		\teleMailEntry{Johanna Doe}{Johanna.Doe}{0125 898454783} %% Domain ommited.
+		\teleMailEntry{Kim Doe}{Kim}{short.doe}{0125 898454783}
+	\end{tabular}
+
+\end{document}
+
