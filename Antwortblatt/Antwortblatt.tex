@@ -1,0 +1,49 @@
+%% Antwortblatt
+%% Autor: Hilko Wiards
+%% Engine: XeLaTeX
+
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+%	\setmainfont{Times}
+\usepackage{titlesec}
+\usepackage[ngerman]{babel}
+\usepackage{lipsum} %Nur für die Lipsumdemo.
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{top=6mm, headheight=25mm, headsep=15mm, total={160mm,265mm}, includeheadfoot}
+\pagestyle{fancy}
+\fancyhf{}
+
+
+%%% Werte setzen.
+\newcommand{\veranstaltung}{VERANSTALTUNG}
+\newcommand{\nummer}{0}
+\fancyhead[L]{
+	Name Eins\\%
+	Name Zwei\\%
+	Name Drei
+}
+\newcommand{\tutor}{TUTORNAME}
+%%%
+
+
+\fancyhead[C]{\veranstaltung: Übung \nummer}
+\fancyhead[R]{Tutor: \tutor}
+\fancyfoot[R]{\thepage}
+\newcommand{\aufgabe}[1]{\section*{\leftskip=0pt Aufgabe #1}}
+\newcommand{\aufgabeteil}[1]{\subsection*{\leftskip=0pt #1)}}
+
+%% Auskommentieren, falls Aufgabenteilbezeichner auf Höhe der Aufgaben sein soll.
+\titleformat{\subsection}[runin]{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+
+\begin{document}
+\leftskip = 15pt %Setzt die Einrückung.
+
+	\aufgabe{1}
+		\lipsum[1]
+	\aufgabe{2}
+		\lipsum[2]
+	\aufgabeteil{a}
+		\lipsum[3]	
+\end{document}
