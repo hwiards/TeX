@@ -1,0 +1,23 @@
+\usepackage{iftex}
+
+\ifPDFTeX
+	%% Falls Umlaute auf dem System zu Problemen fuehren, 	
+	%% dieses Paket auskommentieren und eines der anderen nutzen.
+	\usepackage[utf8]{inputenc}
+	%\usepackage[ansinew]{inputenc} % Windows
+	%\usepackage[latin1]{inputenc} % Linux
+	%\usepackage[applemac]{inputenc} % Mac
+\fi
+
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{top=6mm, headheight=25mm, headsep=15mm, total={160mm,265mm}, includeheadfoot}
+\pagestyle{fancy}
+\fancyhf{}
+
+\newcommand{\aufgabe}[1]{\section*{\leftskip=0pt Aufgabe #1}}
+\newcommand{\aufgabenteil}[1]{\subsection*{\leftskip=0pt #1)}}
+
+%% Auskommentieren, falls Aufgabenteilbezeichner auf Höhe der Aufgaben sein soll.
+\titleformat{\subsection}[runin]{\normalfont\large\bfseries}{\thesubsection}{1em}{}
