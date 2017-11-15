@@ -11,7 +11,7 @@
 
 %%% Werte setzen.
 \newcommand{\veranstaltung}{VERANSTALTUNG}
-\newcommand{\nummer}{0}
+\newcommand{\bezeichner}{Übung 0}
 \fancyhead[L]{
 	Name Eins\\%
 	Name Zwei\\%
@@ -21,8 +21,11 @@
 %%%
 
 
-\fancyhead[C]{\veranstaltung: Übung \nummer}
-\fancyhead[R]{Tutor: \tutor}
+\fancyhead[C]{\veranstaltung: \bezeichner}
+\fancyhead[R]{
+	\today \\%
+	Tutor: \tutor
+}
 \fancyfoot[R]{\thepage}
 
 \begin{document}
